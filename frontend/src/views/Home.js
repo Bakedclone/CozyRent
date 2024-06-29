@@ -29,7 +29,7 @@ function Home() {
                 Get started
               </a>
               <Link
-                to="/selectproperty"
+                to="/selectfurniture"
                 className="github-star ml-1 text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-blueGray-700 active:bg-blueGray-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
               >
                 Book Now
@@ -272,10 +272,11 @@ function Home() {
               </h3>
               <p className="text-blueGray-500 text-lg leading-relaxed mt-4 mb-4">
                 "Are you inspired by our wide range of furniture styles? With Cozy Rental, bringing your dream home to life is just a few clicks away. Whether you’re drawn to the sleek lines of contemporary designs or the cozy warmth of rustic pieces, we make it easy for you to enjoy beautiful, high-quality furniture without the commitment of ownership."
+
               </p>
               <div className="sm:block flex flex-col mt-10">
                 <Link
-                  to="/selectproperty"
+                  to="/selectfurniture"
                   className="github-star ml-1 text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-blueGray-700 active:bg-blueGray-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
                 >
                   Book Now

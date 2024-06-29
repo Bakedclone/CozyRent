@@ -8,9 +8,9 @@ import { Furniture } from "../models/Furniture.js";
 
 export const addFurniture = async(req, res, next) => {
 
-    const { name, description, price_per_month, condition } = req.body; 
+    const { name, description, price_per_month, condition, category } = req.body; 
 
-    if(!name || !description || !price_per_month || !condition)
+    if(!name || !description || !price_per_month || !condition || !category)
         return next(new ErrorHandler("Please add all fields", 400)); // Custom Error Handler
 
     const files = req.files;
@@ -37,7 +37,7 @@ export const addFurniture = async(req, res, next) => {
     }
     try {
         await Furniture.create({
-            name, description, price_per_month, condition, images
+            name, description, price_per_month, condition, images, category
         })
         res.status(201).json({
             success: true,

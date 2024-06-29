@@ -14,6 +14,7 @@ import { loadUser } from "./../redux/actions/user.js";
 // Views
 import Home from "views/Home.js";
 import Selectproerty from "views/Selectproerty.js";
+import SelectFurniture from "views/SelectFurniture.js";
 import BookNow from "views/BookNow.js";
 import Profile from "views/Profile.js";
 import Updateprofile from "views/Updateprofile.js";
@@ -58,8 +59,8 @@ function Index() {
       <IndexNavbar fixed isAuthenticated={isAuthenticated} user={user} />
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/selectproperty" exact component={Selectproerty} />
-        <Route path="/selectproperty/booknow" exact component={BookNow} />
+        <Route path="/selectfurniture" exact component={SelectFurniture} />
+        <Route path="/selectfurniture/booknow" exact component={BookNow} />
         <Route path="/profile" exact component={Profile} />
         <Route path="/updateprofile" exact component={Updateprofile} />
         <Route path="/payrent" exact component={RentPay} />

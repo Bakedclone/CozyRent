@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid'
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProperty } from "./../redux/actions/property.js";
 import PreLoader from "./PreLoader.js";
-
+import FilterSidebar from "components/Sidebar/FilterSidebar.js";
 import CardAppleWatch from "components/Cards/CardAppleWatch.js";
 
 function Selectproerty() {
@@ -21,6 +21,7 @@ function Selectproerty() {
   return (<>
   {loading ?  <PreLoader />: <></>}
     <div className="container mt-20 mx-auto items-center flex flex-wrap">
+    <FilterSidebar/>
       <div className="flex flex-wrap justify-center bg-white shadow-xl rounded-lg mt-15 py-16 px-12 relative z-10 ">
         <div className="w-full text-center lg:w-8/12">
           <p className="text-blueGray-500 text-lg leading-relaxed mt-4 mb-4">
