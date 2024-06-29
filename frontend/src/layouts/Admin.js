@@ -24,17 +24,18 @@ import RemoveRoom from "views/admin/RemoveRoom";
 import ViewTenants from "views/admin/ViewTenants";
 import ViewRooms from "views/admin/ViewRooms.js";
 import AddAdmin from "views/admin/AddAdmin.js";
+import AddFurniture from "views/admin/AddFurniture.js";
 
 // Toaster Notification
 
 import toast, { Toaster } from "react-hot-toast";
-import { clearError, clearMessage } from "./../redux/reducer/tenantSlicer.js";
+import { clearError, clearMessage } from "./../redux/reducer/furnitureSlicer.js";
 import { clearError as clearErrorR, clearMessage as clearMessageR} from "./../redux/reducer/roomSlicer.js";
 import { clearError as clearErrorU, clearMessage as clearMessageU} from "./../redux/reducer/userSlicer.js";
 import { clearError as clearErrorP, clearMessage as clearMessageP} from "./../redux/reducer/propertySlicer.js";
 
 export default function Admin() {
-  const { error, message } = useSelector(state=>state.tenant);
+  const { error, message } = useSelector(state=>state.furniture);
   const { errorR, messageR } = useSelector(state=>state.room);
   const { error : errorU, message : messageU } = useSelector(state=>state.user);
   const { error : errorP, message : messageP } = useSelector(state=>state.property);
@@ -86,6 +87,7 @@ export default function Admin() {
           <Switch>
             <Route path="/admin/dashboard" exact component={Dashboard} />
 
+            <Route path="/admin/addfurniture" exact component={AddFurniture} />
             <Route path="/admin/addtenants" exact component={AddTenants} />
             <Route path="/admin/addadmin" exact component={AddAdmin} />
             <Route path="/admin/updatetenants" exact component={UpdateTenants} />

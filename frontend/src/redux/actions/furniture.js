@@ -1,7 +1,7 @@
 import { addPropertyFail, addPropertyRequest, addPropertySuccess, getPropertyFail, getPropertyRequest, getPropertySuccess, getSelectedPropertyFail, getSelectedPropertyRequest, getSelectedPropertySuccess } from "./../reducer/propertySlicer.js";
 import { server } from "./../store.js";
 import axios from 'axios'
-import { addFurnitureRequest, getFurnitureSuccess, getFurnitureFail, getFurnitureRequest, getSelectedFurnitureRequest, getSelectedFurnitureSuccess, getSelectedFurnitureFail } from "./../reducer/furnitureSlicer.js";
+import { addFurnitureRequest, getFurnitureSuccess, getFurnitureFail, getFurnitureRequest, getSelectedFurnitureRequest, getSelectedFurnitureSuccess, getSelectedFurnitureFail, addFurnitureSuccess, addFurnitureFail } from "./../reducer/furnitureSlicer.js";
 
 export const getAllFurniture = () => async (dispatch) => {
     try {
@@ -30,7 +30,7 @@ export const getSelectedFurniture = (_id) => async (dispatch) => {
 
 export const addFurniture = (formdata) => async (dispatch) => {
     try {
-        dispatch(addPropertyRequest());
+        dispatch(addFurnitureRequest());
         console.log(formdata);
         const { data } = await axios.post(`${server}/addfurniture`, formdata, {
             headers: {
@@ -38,8 +38,8 @@ export const addFurniture = (formdata) => async (dispatch) => {
             },
             withCredentials: true,
         });
-        dispatch(addPropertySuccess(data));
+        dispatch(addFurnitureSuccess(data));
     } catch (error) {
-        dispatch(addPropertyFail(error.response.data.message));
+        dispatch(addFurnitureFail(error.response.data.message));
     }
 }
