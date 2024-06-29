@@ -1,7 +1,7 @@
 {
-  "name": "happylivingfrontend",
+  "name": "cozyrentalfrontend",
   "version": "1.1.0",
-  "description": "Happy Living - Paying Guest website by Sufiyan Shaikh",
+  "description": "Cozy Rental - Furniture Rental website",
   "license": "MIT",
   "dependencies": {
     "@emotion/react": "^11.11.3",

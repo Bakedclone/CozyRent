@@ -16,7 +16,7 @@ function Home() {
         <div className="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
           <div className="pt-26 sm:pt-0">
             <h2 className="font-semibold text-3xl text-blueGray-600 sm:text-26">
-              Conzy Rental - Comfort, Style, Delivered...
+              Cozy Rental - Comfort, Style, Delivered...
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-blueGray-500">
             Cozy Rental is your go-to destination for hassle-free furniture rentals, offering stylish and affordable pieces for every room in your home. Whether you're looking to furnish a new apartment or refresh your current space, we provide a wide range of options to fit your style and budget.

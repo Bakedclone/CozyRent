@@ -2,10 +2,6 @@ import { app } from "./app.js";
 import { connectDB } from "./config/database.js";
 import cloudinary from "cloudinary";
 import Razorpay from "razorpay";
-import nodeCron from "node-cron"    // Task schedular
-import { AutoUpdateRent, CheckInActiveTenant, RemoveInActiveTenant } from "./controllers/tenantController.js";
-// Model Import
-import { Stats } from "./models/Stats.js";
 
 connectDB();
 

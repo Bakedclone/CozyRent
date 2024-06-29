@@ -20,22 +20,16 @@ app.use(express.urlencoded({
 }));
 
 // Importing & Using Router
-import rooms from "./routes/roomsRoutes.js";
 import users from "./routes/usersRoutes.js";
 import furniture from "./routes/furnitureRoutes.js"
 import rental from "./routes/rentedRoutes.js"
-import property from "./routes/propertyRoutes.js";
 import payment from "./routes/paymentRoutes.js";
-import tenants from "./routes/tenantRoutes.js";
 import other from "./routes/otherRoutes.js";
 
-app.use("/api/v1", rooms);
 app.use("/api/v1", users);
 app.use("/api/v1", furniture);
 app.use("/api/v1", rental);
-app.use("/api/v1", property);
 app.use("/api/v1", payment);
-app.use("/api/v1", tenants);
 app.use("/api/v1", other);
 
 app.get("/", (req, res) =>

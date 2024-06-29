@@ -1,7 +1,7 @@
 {
-  "name": "happy_living_server",
+  "name": "cozy_rental_server",
   "version": "1.0.0",
-  "description": "Happy Living Server",
+  "description": "Cozy Rental Server",
   "type": "module",
   "main": "server.js",
   "scripts": {

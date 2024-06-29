@@ -18,8 +18,8 @@ export default function HeaderStats() {
         <div className="px-4 md:px-10 mx-auto w-full">
           <div>
             {/* Card stats */}
-            <div className="flex flex-wrap">
-              <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
+            {/* <div className="flex flex-wrap"> */}
+              {/* <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <CardStats
                   statSubtitle="Pending Rent"
                   statTitle={carddata?carddata.PendingRent:0}
@@ -67,7 +67,7 @@ export default function HeaderStats() {
                   statIconColor="bg-lightBlue-500"
                 />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

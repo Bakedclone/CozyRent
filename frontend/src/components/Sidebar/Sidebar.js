@@ -50,7 +50,7 @@ export default function Sidebar() {
                     className="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
                     to="/"
                   >
-                    Happy Living
+                    Cozy Rental
                   </Link>
                 </div>
                 <div className="w-6/12 flex justify-end">
@@ -74,16 +74,9 @@ export default function Sidebar() {
                 />
               </div>
             </form>
-
-            {/* Divider */}
-            <hr className="my-4 md:min-w-full" />
-            {/* Heading */}
-            <h6 className="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
-              Admin Overview
-            </h6>
             {/* Navigation */}
 
-            <ul className="md:flex-col md:min-w-full flex flex-col list-none">
+            {/* <ul className="md:flex-col md:min-w-full flex flex-col list-none">
               <li className="items-center">
                 <Link
                   className={
@@ -148,18 +141,11 @@ export default function Sidebar() {
                   Add Admin
                 </Link>
               </li>
-            </ul>
+            </ul> */}
 
-            {/* Divider */}
-            <hr className="my-4 md:min-w-full" />
-            {/* Heading */}
-            <h6 className="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
-              Tenants Controls
-            </h6>
-            {/* Navigation */}
             
 
-            <ul className="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
+            {/* <ul className="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
               <li className="items-center">
                 <Link
                   className={
@@ -233,7 +219,7 @@ export default function Sidebar() {
                   View All Tenants
                 </Link>
               </li>
-            </ul>
+            </ul> */}
 
             {/* Divider */}
             <hr className="my-4 md:min-w-full" />
@@ -263,15 +249,8 @@ export default function Sidebar() {
                 </Link>
               </li>
             </ul>
-
-            {/* Divider */}
-            <hr className="my-4 md:min-w-full" />
-            {/* Heading */}
-            <h6 className="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
-              Room Controls
-            </h6>
             {/* Navigation */}
-            <ul className="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
+            {/* <ul className="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
             <li className="items-center">
                 <Link
                   className={
@@ -366,7 +345,7 @@ export default function Sidebar() {
                   View All Rooms
                 </Link>
               </li>
-            </ul>
+            </ul> */}
           </div>
         </div>
       </nav>
