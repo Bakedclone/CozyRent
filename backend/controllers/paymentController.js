@@ -8,6 +8,7 @@ import { Payment } from "../models/Payment.js";
 import { Users } from "../models/Users.js";
 import { Tenants } from "../models/Tenants.js";
 import { Stats } from "../models/Stats.js"
+import { Rentals } from "../models/Rentals.js";
 
 export const buySubscription = catchAsyncError(async (req, res, next)=>{
     const user = await Users.findById(req.user._id);
@@ -47,23 +48,22 @@ export const paymentVerification = catchAsyncError(async (req, res, next)=>{
     const isAuthentic = expectedSignature === razorpay_signature;
 
     if(isAuthentic) {
-        const tenant = await Tenants.findOne({UserID : req.user._id});
-        const amount_paid = tenant.PendingRent;
-        tenant.PendingRent = 0;
-        tenant.save();
+        // const rental = await Rentals.findOne({UserID : req.user._id});
+        // const amount_paid = tenant.PendingRent;
+        // tenant.PendingRent = 0;
+        // tenant.save();
         
         await Payment.create({
-            UserID : tenant.UserID,
-            Amount : amount_paid,
+            UserID : req.user._id,
+            // Amount : amount_paid,
             PaymentMethod : "RazorPay",
             RazorPayPaymentID : razorpay_payment_id,
             RazorPaySignatureID : razorpay_signature,
             RazorPayOrderID : razorpay_order_id
         });
 
-        res.redirect(
-            process.env.FRONTEND_URL`/paymentsuccess?reference=${razorpay_payment_id}`
-        );
+        res.redirect(`${process.env.FRONTEND_URL}/paymentsuccess?reference=${razorpay_payment_id}`);
+
     }
     else {
         res.status(400).json({
@@ -144,14 +144,4 @@ export const payNow = catchAsyncError(async(req, res, next)=>{
         success: true,
         order
     })
-})
-
-Payment.watch().on("change", async()=>{
-    const stats = await Stats.findOne({}).sort({ createdAt: "desc"}).limit(1);
-    const currentDate = new Date();
-    const currentMonth = currentDate.getMonth();
-
-    const newpayment = await Payment.findOne({}).sort({ PaymentDate: "desc"}).limit(1);
-    stats.Revenue[currentMonth] += newpayment.Amount;
-    await stats.save();
 })

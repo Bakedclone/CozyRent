@@ -9,13 +9,16 @@ const CardAppleWatch = ({ prop }) => {
     <Card>
       <CardMedia sx={{ height: '18rem' }} image={prop.images[0].url} />
       <CardContent sx={{ padding: theme => `${theme.spacing(3, 5.25, 4)} !important` }}>
-        <h3 className="font-semibold text-3xl">
+        <h4 className="font-normal text-lg">
           {prop.name}
-        </h3>
+        </h4>
+        <h4 className="font-semibold text-xl flex-inline">
+        ₹{prop.price_per_month}. <span className="font-normal text-sm">/ month</span>
+        </h4>
       </CardContent>
       <Link
         to={{
-          pathname: '/selectproperty/booknow',
+          pathname: '/selectfurniture/booknow',
           state: { data: prop._id }
         }}>
         <Button variant='contained' sx={{ py: 2.5, width: '100%', borderTopLeftRadius: 0, borderTopRightRadius: 0 }}>

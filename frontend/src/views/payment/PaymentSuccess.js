@@ -1,11 +1,17 @@
-import React from 'react'
-import { useLocation } from "react-router-dom";
-import paymentsuccess from "./../../assets/img/PaymentSuccess.webp"
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import paymentsuccess from './../../assets/img/PaymentSuccess.webp';
 
 function PaymentSuccess() {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const referenceNum = queryParams.get('reference');
+
+  useEffect(() => {
+    // Clear cart data from localStorage
+    localStorage.removeItem('cart');
+  }, []);
+
   return (
     <>
       <main className="profile-page">
@@ -71,7 +77,7 @@ function PaymentSuccess() {
         </section>
       </main>
     </>
-  )
+  );
 }
 
-export default PaymentSuccess
+export default PaymentSuccess;

@@ -60,15 +60,10 @@ export const logout = () => async (dispatch) => {
     }
 }
 
-export const bookNow = (SharingCapacity, PropertyID, Description, CheckINDate) => async (dispatch) => {
+export const bookNow = () => async (dispatch) => {
     try {
         dispatch(bookNowRequest());
-        const  {data}  = await axios.post(`${server}/booknow`,{SharingCapacity, PropertyID, Description, CheckINDate}, {
-            headers: {
-                "Content-type": "application/json"
-            },
-            withCredentials: true,
-        });
+        const data = {message : "Item added to cart!"};
         dispatch(bookNowSuccess(data));
     } catch (error) { 
         dispatch(bookNowFail(error.response.data.message));

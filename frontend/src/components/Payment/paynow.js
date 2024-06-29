@@ -6,14 +6,14 @@ import logo from './../../assets/img/house.png';
 function Paynow(props) {
   const paymenthandler = async (amount) => {
     const { data: { key } } = await axios.get(`${server}/razorpaykey`);
+    console.log(amount);
     const { data: { order } } = await axios.post(`${server}/paynow`, { amount });
-    // console.log(data); 
     var options = {
       key, // Enter the Key ID generated from the Dashboard
       amount: order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
       currency: "INR",
-      name: "Happy Living", //your business name
-      description: "Paying Guest website",
+      name: "Cozy-Rental", //your business name
+      description: "Furniture Rental website",
       image: logo,
       order_id: order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
       callback_url: `${server}/paymentverifiaction`,
@@ -39,7 +39,7 @@ function Paynow(props) {
         <button
           className="bg-lightBlue-500 active:bg-lightBlue-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150"
           type="button"
-          onClick={() => paymenthandler(props.Rent)}
+          onClick={() => paymenthandler(props.Rental)}
         >
           Pay Now
         </button>

@@ -1,7 +1,7 @@
 import { addPropertyFail, addPropertyRequest, addPropertySuccess, getPropertyFail, getPropertyRequest, getPropertySuccess, getSelectedPropertyFail, getSelectedPropertyRequest, getSelectedPropertySuccess } from "./../reducer/propertySlicer.js";
 import { server } from "./../store.js";
 import axios from 'axios'
-import { addFurnitureRequest, getFurnitureSuccess, getFurnitureFail, getFurnitureRequest } from "./../reducer/furnitureSlicer.js";
+import { addFurnitureRequest, getFurnitureSuccess, getFurnitureFail, getFurnitureRequest, getSelectedFurnitureRequest, getSelectedFurnitureSuccess, getSelectedFurnitureFail } from "./../reducer/furnitureSlicer.js";
 
 export const getAllFurniture = () => async (dispatch) => {
     try {
@@ -13,18 +13,18 @@ export const getAllFurniture = () => async (dispatch) => {
     }
 }
 
-export const getSelectedProperty = (_id) => async (dispatch) => {
+export const getSelectedFurniture = (_id) => async (dispatch) => {
     try {
-        dispatch(getSelectedPropertyRequest());
-        const { data } = await axios.post(`${server}/getproperty`, { _id }, {
+        dispatch(getSelectedFurnitureRequest());
+        const { data } = await axios.post(`${server}/getfurniture`, { _id }, {
             headers: {
                 "Content-type": "application/json"
             },
             withCredentials: true,
         });
-        dispatch(getSelectedPropertySuccess(data.property));
+        dispatch(getSelectedFurnitureSuccess(data.furniture));
     } catch (error) {
-        dispatch(getSelectedPropertyFail(error.response.data.message));
+        dispatch(getSelectedFurnitureFail(error.response.data.message));
     }
 }
 

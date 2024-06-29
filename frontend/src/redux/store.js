@@ -6,6 +6,7 @@ import tenantSlicer from './reducer/tenantSlicer.js';
 import paymentSlicer from './reducer/paymentSlicer.js';
 import dashboardSlicer from './reducer/dashboardSlicer.js';
 import roomSlicer from './reducer/roomSlicer.js';
+import furnitureSlicer from './reducer/furnitureSlicer.js';
 
 export const store = configureStore({
   reducer: {
@@ -15,7 +16,8 @@ export const store = configureStore({
     tenant: tenantSlicer,
     payment: paymentSlicer,
     dashboard: dashboardSlicer,
-    room: roomSlicer
+    room: roomSlicer,
+    furniture: furnitureSlicer
   },
 })
 

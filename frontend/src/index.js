@@ -15,6 +15,7 @@ import Index from "layouts/Index";
 // views without layouts
 import Profile from "views/Profile.js";
 import UpdateProfile from "views/Updateprofile.js";
+import Cart from "views/Cart.js";
 
 ReactDOM.render(
   <Provider store={store}>
@@ -27,6 +28,7 @@ ReactDOM.render(
         {/* add routes without layouts */}
         <Route path="/profile" exact component={Profile} />
         <Route path="/updateprofile" exact component={UpdateProfile} />
+        <Route path="/cart" exact component={Cart} />
         <Redirect from="*" to="/" />
       </Switch>
     </BrowserRouter>

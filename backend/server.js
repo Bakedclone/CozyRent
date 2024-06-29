@@ -20,28 +20,5 @@ export const instance = new Razorpay({
   key_secret: process.env.RAZORPAY_API_SECRET,
 });
 
-nodeCron.schedule("0 0 0 1 * *", async () => {
-  // nodeCron.schedule("* * * * * *", async () => {
-  try {
-    AutoUpdateRent();
-    CheckInActiveTenant();
-    RemoveInActiveTenant();
-  } catch (error) {
-    console.log(error);
-  }
-});
-nodeCron.schedule("0 0 1 1 *", async () => {
-  // nodeCron.schedule("* * * * * *", async () => {
-  try {
-    const Revenue = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-    const Tenant = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-    await Stats.create({Revenue, Tenant});
-  } catch (error) {
-      console.log(error);
-  }
-});
-
-
-
 app.listen(process.env.PORT, () =>
   console.log(`Server is running on ${process.env.PORT}`));

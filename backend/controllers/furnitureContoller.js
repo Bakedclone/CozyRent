@@ -50,22 +50,22 @@ export const addFurniture = async(req, res, next) => {
     }
 };
 
-export const getAllProperty = catchAsyncError(async (req, res, next)=> {
+export const getAllFurniture = catchAsyncError(async (req, res, next)=> {
     
-    const property = await Property.find({});
+    const furniture = await Furniture.find({});
 
     res.status(200).json({
         success: true,
-        property,
+        furniture,
     });
 })
 
-export const getProperty = catchAsyncError(async (req, res, next)=> {
+export const getFurniture = catchAsyncError(async (req, res, next)=> {
     
-    const property = await Property.findOne({_id : req.body._id});
+    const furniture = await Furniture.findOne({_id : req.body._id});
 
     res.status(200).json({
         success: true,
-        property,
+        furniture,
     });
 })

@@ -22,6 +22,7 @@ import RentPay from "views/RentPay.js";
 import PaymentSuccess from "views/payment/PaymentSuccess.js";
 import PreLoader from "views/PreLoader.js";
 import PageNotFound from "views/PageNotFound.js";
+import Cart from "views/Cart.js";
 
 function Index() {
 
@@ -62,6 +63,7 @@ function Index() {
         <Route path="/selectfurniture" exact component={SelectFurniture} />
         <Route path="/selectfurniture/booknow" exact component={BookNow} />
         <Route path="/profile" exact component={Profile} />
+        <Route path="/cart" exact component={Cart} />
         <Route path="/updateprofile" exact component={Updateprofile} />
         <Route path="/payrent" exact component={RentPay} />
         <Route path="/paymentsuccess" exact component={PaymentSuccess} />

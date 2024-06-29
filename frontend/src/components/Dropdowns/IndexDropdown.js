@@ -104,30 +104,13 @@ const IndexDropdown = ({isAuthenticated, user}) => {
       >
         Update Profile
       </Link>
-      {user && user.type === "tenant" ? (
-        <span>
-          <span
-            className={
-              "text-sm pt-6 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400"
-            }
-          >
-            My Stay
-          </span>
-          <Link
-            to="/payrent"
-            className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-            onClick={closeDropdownPopover}
-          >
-            Pay Rent
-          </Link>
-          <Link
-            onClick={countdepositehandler}
-            className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-            // onClick={closeDropdownPopover}
-          >
-            Count Deposite
-          </Link>
-        </span>) : (<></>)}
+      <Link
+        to="/cart"
+        className="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+        onClick={closeDropdownPopover}
+      >
+        View Cart
+      </Link>
       <div
         className={
           "flex justify-center mt-5 items-center h-full"
