@@ -1,0 +1,2 @@
+# CozyRent
+Furniture Rental Website
