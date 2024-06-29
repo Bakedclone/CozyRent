@@ -45,7 +45,7 @@ npm install
 ```
 3. You are all Set with Frontend , Run the VITE server to run Frontend
 ```
-npm run dev
+npm start
 ```
 
 ### For Backend
